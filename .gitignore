@@ -1,0 +1,12 @@
+lib-cov/
+dist/
+output/
+man/
+test/log/
+*~
+.project
+.settings/
+node_modules/
+.idea/
+coverage/
+.DS_Store
