@@ -3,6 +3,10 @@
   "description": "FeedHenry Stats Client",
   "version": "0.3.0",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:feedhenry/fh-statsc.git"
+  },
   "main": "lib/stats.js",
   "directories": {
     "lib": "bin"
