@@ -15,7 +15,7 @@
     "test": "grunt fh:test"
   },
   "engines": {
-    "node": "*"
+    "node": "4.4"
   },
   "bin": {
     "fh-statsc": "./bin/fh-statsc.js"
