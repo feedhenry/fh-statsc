@@ -1,10 +1,10 @@
 {
   "name": "fh-statsc",
-  "version": "0.2.4",
+  "version": "0.3.1",
   "dependencies": {
     "async": {
       "version": "0.2.9",
-      "from": "https://registry.npmjs.org/async/-/async-0.2.9.tgz",
+      "from": "async@0.2.9",
       "resolved": "https://registry.npmjs.org/async/-/async-0.2.9.tgz"
     }
   }
