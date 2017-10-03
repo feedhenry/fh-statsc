@@ -3,7 +3,7 @@ var fhstatsc = require('stats');
 var async = require('async');
 var proxyquire = require('proxyquire').noCallThru();
 
-exports.checkIFaceDisabled = function () {
+exports.checkIFaceDisabled = function (done) {
   var fhs = fhstatsc.FHStats({});
   assert.ok(fhs.inc, "should be an inc function present");
   assert.ok(fhs.dec, "should be a dec function present");
@@ -20,13 +20,14 @@ exports.checkIFaceDisabled = function () {
         fhs.gauge('test_counter', 27, function (err) {
           assert.ifError(err);
           fhs.close();
+          return done();
         });
       });
     });
   });
 };
 
-exports.checkIFaceEnabled = function () {
+exports.checkIFaceEnabled = function (done) {
   var fhs = fhstatsc.FHStats({enabled: true});
   assert.ok(fhs.inc, "should be an inc function present");
   assert.ok(fhs.dec, "should be a dec function present");
@@ -43,13 +44,14 @@ exports.checkIFaceEnabled = function () {
         fhs.gauge('test_counter', 27, function (err) {
           assert.ifError(err);
           fhs.close();
+          return done();
         });
       });
     });
   });
 };
 
-exports.testSanatizeInput = function () {
+exports.testSanatizeInput = function (done) {
   var asyncMock = {
     queue: function () {
       return {
@@ -78,5 +80,6 @@ exports.testSanatizeInput = function () {
     });
   }, function () {
     fhs.close();
+    return done();
   });
 };
