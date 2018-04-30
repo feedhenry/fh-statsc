@@ -1,7 +1,7 @@
 {
   "name": "fh-statsc",
   "description": "FeedHenry Stats Client",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
     "test": "grunt fh:test"
   },
   "engines": {
-    "node": "*"
+    "node": "6.9"
   },
   "bin": {
     "fh-statsc": "./bin/fh-statsc.js"
@@ -24,11 +24,13 @@
     "async": "0.2.9"
   },
   "devDependencies": {
+    "expresso": "~0.9.2",
+    "grunt-fh-build": "~2.0.0",
+    "istanbul": "~0.3.22",
     "chai": "^4.1.2",
     "eslint": "^4.8.0",
     "grunt": "^1.0.1",
     "grunt-fh-build": "^2.0.0",
-    "istanbul": "^0.3.15",
     "mocha": "^4.0.0",
     "proxyquire": "0.4.1"
   },
