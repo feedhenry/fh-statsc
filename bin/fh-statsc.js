@@ -1,3 +1,4 @@
+
 var os = require('os');
 var fhstats = require('stats');
 
@@ -9,23 +10,23 @@ var stats_enabled = true;
 var prefix = process.argv[2] || "test";
 var stats = fhstats.FHStats({host: stats_host, port: stats_port, enabled: stats_enabled});
 
-stats.inc(prefix + '_counter', function (err, bytes) {
+stats.inc(prefix + '_counter', function(err, bytes) {
   if (err) {
     console.log('ERROR: ', err);
   }
   console.log('called back with ', bytes);
-  stats.timing(prefix + '_timer', Math.floor(Math.random()*51) + 50, function (err2, bytes2) {
+  stats.timing(prefix + '_timer', Math.floor(Math.random()*51) + 50, function(err2, bytes2) {
     if (err2) {
       console.log('ERROR: ', err2);
     }
     console.log('called back with ', bytes2);
 
-    stats.gauge(prefix + '_memory', (os.totalmem() - os.freemem())/os.totalmem()*100, function (err2, bytes2) {
+    stats.gauge(prefix + '_memory', (os.totalmem() - os.freemem())/os.totalmem()*100, function(err2, bytes2) {
       if (err2) {
         console.log('ERROR: ', err2);
       }
       console.log('called back with ', bytes2);
-      stats.gauge(prefix + '_cpu_load', os.loadavg()[0], function (err2, bytes2) {
+      stats.gauge(prefix + '_cpu_load', os.loadavg()[0], function(err2, bytes2) {
         if (err2) {
           console.log('ERROR: ', err2);
         }
@@ -36,7 +37,7 @@ stats.inc(prefix + '_counter', function (err, bytes) {
   });
 });
 
-// jshint ignore:start
+/* eslint-disable no-unused-vars */
 function get_cpu_idle() {
   var idle = 0;
   var cpus = os.cpus();
