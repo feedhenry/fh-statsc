@@ -1,7 +1,7 @@
 {
   "name": "fh-statsc",
   "description": "FeedHenry Stats Client",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
@@ -32,6 +32,9 @@
     "mocha": "^4.0.0",
     "proxyquire": "0.4.1"
   },
+  "bundledDependencies": [
+    "async"
+  ],
   "man": "./man/fh-statsc.1",
   "preferGlobal": "true"
 }
