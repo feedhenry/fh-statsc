@@ -1,16 +1,18 @@
+'use strict';
+
 module.exports = function(grunt) {
-  'use strict';
-
-  // Just set shell commands for running different types of tests
+  // Project Configuration
   grunt.initConfig({
-    _test_runner: '_mocha',
-    _unit_args: '-A -u exports --recursive -t 10000 ./test',
-
-    // These are the properties that grunt-fh-build will use
-    unit: '<%= _test_runner %> <%= _unit_args %>',
-    unit_cover: 'istanbul cover --dir cov-unit <%= _test_runner %> -- <%= _unit_args %>'
+    unit: ['mocha -A -u exports --recursive -t 10000 ./test/unit'],
+    integrate:['mocha -A -u exports --recursive -t 10000 ./test/integrate'],
+    accept:['mocha -A -u exports --recursive -t 10000 ./test/accept'],
+    fhLintTarget: ['lib/**/*.js']
   });
 
   grunt.loadNpmTasks('grunt-fh-build');
+
+  grunt.registerTask('test', ['eslint','fh:test']);
+  grunt.registerTask('unit', ['eslint', 'fh:unit']);
+  grunt.registerTask('dist', ['fh:dist']);
   grunt.registerTask('default', ['fh:default']);
 };
